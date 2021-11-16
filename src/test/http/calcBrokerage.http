@@ -1,0 +1,8 @@
+### Brokage 매매
+GET {{host}}/api/calc/brokerage?dealType=PURCHASE&price=1000000000
+
+### Brokage 임대차
+GET {{host}}/api/calc/brokerage?dealType=RENT&price=1000000000
+
+### 잘못된 거래 유형 임대차
+GET {{host}}/api/calc/brokerage?dealType=ANTD&price=100000000
