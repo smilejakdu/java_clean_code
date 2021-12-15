@@ -6,3 +6,10 @@ GET {{host}}/api/calc/brokerage?dealType=RENT&price=1000000000
 
 ### 잘못된 거래 유형 임대차
 GET {{host}}/api/calc/brokerage?dealType=ANTD&price=100000000
+
+
+### Brokage 매매 - Apartment ID
+GET {{host}}/api/calc/apartment/3?dealType=PURCHASE
+
+### Brokage 임대차 - Apartment ID
+GET {{host}}/api/calc/apartment/3?dealType=RENT

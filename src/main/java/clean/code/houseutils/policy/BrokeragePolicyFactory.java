@@ -1,17 +1,19 @@
 package clean.code.houseutils.policy;
 
 import clean.code.houseutils.constants.DealType;
+import clean.code.houseutils.exception.ErrorCode;
+import clean.code.houseutils.exception.HouseUtilsException;
 
 public class BrokeragePolicyFactory {
 
-    public static BrokeragePolicy of(DealType dealType) throws Exception {
+    public static BrokeragePolicy of(DealType dealType) {
         switch (dealType) {
             case PURCHASE:
-                return  new PurchaseBrokeragePolicy();
+                return new PurchaseBrokeragePolicy();
             case RENT:
-                return  new RentBrokeragePolicy();
+                return new RentBrokeragePolicy();
             default:
-                throw new IllegalArgumentException("현재 없는 거래 유형을 입력하였습니다.");
+                throw new HouseUtilsException(ErrorCode.INVALID_REQUEST);
         }
     }
 
