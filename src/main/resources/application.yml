@@ -1,0 +1,17 @@
+spring:
+  jpa:
+    database: h2
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    hikari:
+      driverClassName: org.h2.Driver
+      username: sa
+      password: sa
+      jdbc-url: jdbc:h2:mem:testdb
+  sql:
+    init:
+      mode: always
+
+# http://localhost:8080/h2-console/
+# INSERT INTO APARTMENT (NAME, ADDRESS, PRICE) VALUES('타워팰리스', '부자', 2000000000);
