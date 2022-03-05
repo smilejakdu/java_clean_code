@@ -9,5 +9,4 @@ public interface BrokeragePolicy {
     }
 
     BrokerageRule createRule(Long price);
-
 }

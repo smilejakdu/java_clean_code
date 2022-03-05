@@ -17,5 +17,4 @@ public class RentBrokeragePolicy implements BrokeragePolicy {
         }
         return rule;
     }
-
 }

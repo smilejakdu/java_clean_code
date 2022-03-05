@@ -30,6 +30,4 @@ public class BrokerageQueryController {
         Long price = apartmentService.getPrice(apartmentId);
         return policy.calculate(price);
     }
-
-
 }

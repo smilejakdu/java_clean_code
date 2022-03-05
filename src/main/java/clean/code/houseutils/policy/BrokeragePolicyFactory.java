@@ -16,5 +16,4 @@ public class BrokeragePolicyFactory {
                 throw new HouseUtilsException(ErrorCode.INVALID_REQUEST);
         }
     }
-
 }
