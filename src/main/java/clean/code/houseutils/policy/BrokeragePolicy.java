@@ -1,12 +1,18 @@
 package clean.code.houseutils.policy;
 
-//java 8 - default method, static method (보조용)
+import clean.code.houseutils.exception.ErrorCode;
+import clean.code.houseutils.exception.HouseUtilsException;
+
+import java.util.List;
+
 public interface BrokeragePolicy {
+    List<BrokerageRule> getRules();
 
     default Long calculate(Long price) {
-        BrokerageRule rule = createRule(price);
-        return rule.calculate(price);
-    }
+        BrokerageRule brokerageRule = getRules().stream()
+                .filter(rule -> price < rule.getLessThan())
+                .findFirst().orElseThrow(()->new HouseUtilsException(ErrorCode.INTERNAL_ERROR));
 
-    BrokerageRule createRule(Long price);
+        return brokerageRule.calcMaxBrokerage(price);
+    }
 }
