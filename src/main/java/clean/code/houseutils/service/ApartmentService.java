@@ -17,4 +17,12 @@ public class ApartmentService {
                 .orElseThrow(() -> new HouseUtilsException(ErrorCode.ENTITY_NOT_FOUND))
                 .getPrice();
     }
+
+    public Long postApartment(){
+        String result =  apartmentRepository.findById(apartmentId)
+                .orElseThrow(() -> new HouseUtilsException(ErrorCode.ENTITY_NOT_FOUND))
+        if(!result){
+            throw new HouseUtilsException(ErrorCode.ENTITY_NOT_FOUND);
+        }
+    }
 }
