@@ -26,6 +26,5 @@ public class BrokeragePolicyTest {
                 purchaseBrokeragePolicy.calculate(800_000_000L),4_000_000L);
         Assertions.assertEquals(
                 purchaseBrokeragePolicy.calculate(1_000_000_000L),9_000_000L);
-
     }
 }
