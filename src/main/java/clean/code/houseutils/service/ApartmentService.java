@@ -9,8 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 public class ApartmentService {
-    private final
-    ApartmentRepository apartmentRepository;
+    private final ApartmentRepository apartmentRepository;
 
     public Long getPrice(Long apartmentId) {
         return apartmentRepository.findById(apartmentId)
